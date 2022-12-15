@@ -59,7 +59,7 @@ class ConsoleServiceProvider extends ServiceProvider
         }
 
         try {
-            Dotenv::createImmutable(base_path(), self::PLESK_ENV_FILE_NAME)->load();
+            (new Dotenv(base_path(), self::PLESK_ENV_FILE_NAME))->load();
             if (env('PLESK_EXT_LARAVEL_QUEUE_WORKER_ENABLED') !== null) {
                 return self::CONFIG_SOURCE_PLESK_ENV;
             }
