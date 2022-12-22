@@ -8,6 +8,7 @@ use Illuminate\Support\ServiceProvider;
 use InvalidArgumentException;
 use PleskExtLaravel\Console\Commands\ConfigSource;
 use PleskExtLaravel\Console\Commands\ListEnv;
+use PleskExtLaravel\Console\Commands\QueueFailedCommand;
 use Psr\Container\ContainerExceptionInterface;
 
 class ConsoleServiceProvider extends ServiceProvider
@@ -28,6 +29,7 @@ class ConsoleServiceProvider extends ServiceProvider
         $this->commands([
             ListEnv::class,
             ConfigSource::class,
+            QueueFailedCommand::class,
         ]);
     }
 
